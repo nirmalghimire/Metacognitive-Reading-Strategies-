@@ -1,11 +1,20 @@
 ---
-title: "Predictive Utility of Metacognitive Reading Strategies Across Educational
-  Models - Raw Regression Analyses"
-author: "Nirmal Ghimire & Kouider Mokhtari, K-16 Literacy Center"
+title: "Predictive Utility of Metacognitive Reading Strategies Across Educational Models - Raw Regression Analyses"
+author: |
+  Nirmal Ghimire, Ph.D. [ORCID: [0000-0002-2032-1624](https://orcid.org/0000-0002-2032-1624)]  
+  Assistant Professor  
+  Watson College of Education, University of North Carolina Wilmington  
+  Kouider Mokhtari, K-16 Literacy Center
 date: "`r Sys.Date()`"
 output:
-  pdf_document: default
-  html_document: default
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    theme: flatly
+    highlight: tango
+    code_folding: hide
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
