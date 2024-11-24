@@ -1,8 +1,11 @@
 ---
-title: "Predictive Utility of Metacognitive Reading Strategies Across Educational Models - Raw Regression Analyses"
+title: "Predictive Utility of Metacognitive Reading Strategies Across Educational
+  Models - Raw Regression Analyses"
 author: "Nirmal Ghimire & Kouider Mokhtari, K-16 Literacy Center"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -28,7 +31,7 @@ library(broom)
 #### i. Data Dimension and Variables in the Dataset
 ```{r data, echo=FALSE}
 # Define the file path
-  #file_path <- "C:/Users/nghimire/OneDrive - University of Texas at Tyler/Documents/edsurvey_PISA_USA/pisa_2024/CY07_MSU_STU_QQQ_long.sav"
+  #file_path <- "C:/Users/ghimiren/Desktop/PISA_USA/pisa_2024/CY07_MSU_STU_QQQ_long.sav"
 
 # Read the .sav file
   meta_read_data <- read_sav("meta_read_data.sav")

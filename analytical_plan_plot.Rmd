@@ -1,0 +1,108 @@
+---
+title: "Analytical Plan for Metacognitive Reading Strategies Study"
+author: "Nirmal Ghimire, Ph.D."
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = NA,
+                      warning = FALSE,
+                      message = FALSE,
+                      tidy = 'styler',
+                      error = FALSE, 
+                      highlight = TRUE, 
+                     prompt = FALSE,
+                     cache = TRUE)
+```
+
+
+```{r library, echo=FALSE}
+# Library
+library(ggplot2)
+library(gridExtra)
+library(grid)
+```
+
+```{r figure_one, echo=FALSE}
+# Create the plot function
+create_analytical_plot <- function() {
+  # Create a new plot window
+  par(mar = c(1, 1, 1, 1))
+  plot.new()
+  plot.window(xlim = c(0, 100), ylim = c(0, 60))
+  
+  # Draw Stage boxes (horizontally arranged)
+  rect(5, 35, 25, 55, col = "#e6f3ff", border = "#2196f3")
+  rect(35, 35, 55, 55, col = "#e6f3ff", border = "#2196f3")
+  rect(65, 35, 85, 55, col = "#e6f3ff", border = "#2196f3")
+  
+  # Draw Purpose boxes (below stages)
+  rect(5, 5, 25, 25, col = "#f5f5f5", border = "#9e9e9e")
+  rect(35, 5, 55, 25, col = "#f5f5f5", border = "#9e9e9e")
+  rect(65, 5, 85, 25, col = "#f5f5f5", border = "#9e9e9e")
+  
+  # Draw connecting lines
+  segments(15, 35, 15, 25, col = "#2196f3", lwd = 2)
+  segments(45, 35, 45, 25, col = "#2196f3", lwd = 2)
+  segments(75, 35, 75, 25, col = "#2196f3", lwd = 2)
+  
+  # Draw horizontal connecting arrows between stages
+  arrows(25, 45, 35, 45, col = "#2196f3", lwd = 2, length = 0.1)
+  arrows(55, 45, 65, 45, col = "#2196f3", lwd = 2, length = 0.1)
+  
+  # Add text for Stages
+  text(15, 50, "Stage 1:", cex = 0.9, font = 2)
+  text(15, 47, "Feature", cex = 0.8)
+  text(15, 44, "Importance", cex = 0.8)
+  text(15, 41, "Analysis", cex = 0.8)
+  text(15, 38, "(Random Forest)", cex = 0.7)
+  
+  text(45, 50, "Stage 2:", cex = 0.9, font = 2)
+  text(45, 47, "Survey-Weighted", cex = 0.8)
+  text(45, 44, "Linear", cex = 0.8)
+  text(45, 41, "Regression", cex = 0.8)
+  
+  text(75, 50, "Stage 3:", cex = 0.9, font = 2)
+  text(75, 47, "Decomposition of", cex = 0.8)
+  text(75, 44, "Categorical", cex = 0.8)
+  text(75, 41, "Variables", cex = 0.8)
+  
+  # Add text for Purposes
+  text(15, 22, "Purpose:", cex = 0.8, font = 2)
+  text(15, 18, "Identify and rank", cex = 0.7)
+  text(15, 15, "most significant", cex = 0.7)
+  text(15, 12, "reading strategies", cex = 0.7)
+  
+  text(45, 22, "Purpose:", cex = 0.8, font = 2)
+  text(45, 18, "Quantify effects", cex = 0.7)
+  text(45, 15, "of strategies on", cex = 0.7)
+  text(45, 12, "skills and", cex = 0.7)
+  text(45, 9, "achievement", cex = 0.7)
+  
+  text(75, 22, "Purpose:", cex = 0.8, font = 2)
+  text(75, 18, "Examine nuanced", cex = 0.7)
+  text(75, 15, "effects of strategy", cex = 0.7)
+  text(75, 12, "levels on", cex = 0.7)
+  text(75, 9, "outcomes", cex = 0.7)
+  
+  # Add title
+  text(45, 58, "Three-Stage Analytical Approach", cex = 1.2, font = 2)
+}
+```
+
+```{r figure_save, echo=FALSE}
+# Save as PNG with specified DPI
+png("analytical_approach.png", 
+    width = 12,  # increased width for horizontal layout
+    height = 6,  # decreased height
+    units = "in", 
+    res = 300,   # DPI setting
+    bg = "white")
+create_analytical_plot()
+dev.off()
+```
+
+### Displaying the Analytical Plan
+![Analytical Plan](analytical_approach.png)
